@@ -1,0 +1,35 @@
+<h2>Reverse Number- takes in a number and returns the reverse of it</h2> 
+
+<button onclick="whatNumber()">check it out</button>
+
+<script>
+    //long version!
+function reverse(num) {
+  const originalArray = [...String(num)]; //convert number to a string and spread into an array
+  const newArray = [...originalArray]; //copy the array using spread so we have a new array as well as an original to get the numbers from
+
+  for (let i = 0; i < originalArray.length; i++) { //loop through the array and assign 1st to last, 2nd to 2nd last etc
+    newArray[i] = originalArray[originalArray.length - (i + 1)];
+  }
+
+  const newSNumber = newArray.toString(); //convert the array to a string
+  const newNumber = Number(newSNumber.replace(/,/g, '')); //replace all instances of , with nothing and convert to number
+ 
+  alert(`Reversed number is ${newNumber}`);
+  //console.log(newArray);
+  //console.log(`original number is ${originalArray}`);
+  
+}
+
+
+function whatNumber() {
+  const number = prompt('Please enter your number'); 
+  if (isNaN(number)) {
+    alert('That isn\'t a number- please try again'); //if not a number is put into the prompt box return an error message
+    // whatNumber();
+  } else {
+    reverse(number); //if it isn't NaN then proceed to the reverse function
+  }
+}
+
+</script>

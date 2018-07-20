@@ -1,0 +1,19 @@
+<html>order a word
+<body>
+<script>
+ 
+
+
+function sortAlpha (word) {
+    return [...word].sort().join(""); //the word is spread into an array then the array is sorted alphabetically and then turned back into a string and returned.
+}
+console.log (sortAlpha("shivermetimbers"));
+
+function sortAlpha2 (word) {
+    return word.split('').sort().join(""); //same as before but we call split on the word which turns it to an array
+}
+console.log (sortAlpha2("shivermetimbers"));
+
+</script>    
+</body>
+</html>

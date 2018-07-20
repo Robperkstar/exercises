@@ -1,0 +1,15 @@
+<script>
+// app to calculate the area of a triangle
+const area = function (a, b, c) {
+  const p = (a + b + c) / 2;
+  console.log(p);
+  const d = p - a;
+  const e = p - b;
+  const f = p - c;
+  const next = (p * d * e * f);
+  console.log(next);
+  const answer = Math.sqrt(next);
+  return answer;
+};
+
+</script>

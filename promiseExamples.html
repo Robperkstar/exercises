@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises!</title>
+</head>
+<body>
+<script>
+const users = fetch('https://api.github.com/users');//fetch the data
+
+users
+  .then(data => data.json()) //after data is fetched convert to Json
+  .then(data => { console.log(data) }) //then log the data
+  .catch((err) => { //if there is an error catch it and console log it
+    console.error(err);
+  })
+
+</script>
+</body>
+</html>

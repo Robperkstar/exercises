@@ -1,0 +1,27 @@
+<html>longest word in a sentence
+<body>
+    
+<button onclick="wordSentence()">check it out</button>
+    
+<script>
+ 
+function longestWord (sentence) { //
+   sentence = sentence.split(' ');
+   sentence = sentence.sort((word1,word2) => {
+      return word1.length < word2.length ? 1 : -1;
+    });
+   alert(`the longest word in the sentence is ${sentence[0]}`);
+  
+  }
+   
+ 
+function wordSentence() {
+  const sentence = prompt('Please enter your sentence to find out the longest word'); 
+    longestWord(sentence); 
+  }
+
+
+
+</script>    
+</body>
+</html>

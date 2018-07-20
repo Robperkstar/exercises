@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>using generators</title>
+</head>
+<body>
+    
+<script>
+
+  function ajax(url) { //function takes in a url and goes to the site- converts the data to json format. Then calls next on the generator
+    fetch(url).then(data => data.json()).then(data => dataGen.next(data))
+  }
+
+  function* steps() {
+    console.log('fetching git Hub Users');
+    const gHubUsers = yield ajax('https://api.github.com/users'); 
+    console.log(gHubUsers);
+    console.log('fetching defunkt');
+    const defunkt = yield ajax('https://api.github.com/users/'+gHubUsers[1].login);
+    console.log(defunkt);
+  }
+
+  const dataGen = steps();
+  dataGen.next(); // kick it off
+
+</script>
+</body>
+</html>
